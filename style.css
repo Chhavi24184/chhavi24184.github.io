@@ -177,6 +177,7 @@ h1, h2, h3, h4 {
     justify-content: space-between;
     gap: 4rem;
     z-index: 2;
+    width: 100%;
 }
 
 .hero-content {
@@ -195,6 +196,7 @@ h1, h2, h3, h4 {
     position: relative;
     width: 350px;
     height: 350px;
+    max-width: 100%;
 }
 
 .image-wrapper img {
@@ -750,6 +752,12 @@ input:focus, textarea:focus {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-container {
         flex-direction: column-reverse;
@@ -762,6 +770,10 @@ input:focus, textarea:focus {
     .hero-title {
         font-size: 3.5rem;
     }
+    .hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
     .about-grid, .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -769,6 +781,9 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
+    .py-section {
+        padding: 60px 0;
+    }
     .nav-links {
         display: none;
         position: absolute;
@@ -780,6 +795,8 @@ input:focus, textarea:focus {
         padding: 2rem;
         text-align: center;
         border-bottom: 1px solid var(--border-color);
+        z-index: 999;
+        transition: var(--transition);
     }
     .nav-links.active {
         display: flex;
@@ -795,5 +812,40 @@ input:focus, textarea:focus {
     }
     .contact-links {
         grid-template-columns: 1fr;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .hero-role {
+        font-size: 1.4rem;
+    }
+    .hero-tagline {
+        font-size: 1rem;
+    }
+    .image-wrapper {
+        width: 280px;
+        height: 280px;
+    }
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    .about-text h3 {
+        font-size: 1.8rem;
     }
 }
